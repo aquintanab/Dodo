@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,12 +11,15 @@ header {
     background-color: #5c2e91;
     padding: 20px;
     color: white;
+    display: flex;  /* Usamos flexbox */
+    justify-content: center;  /* Centra el contenido horizontalmente */
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;  /* Centra los elementos de la lista */
+    padding: 0;
 }
 
 nav ul li {
@@ -41,13 +44,26 @@ main {
     padding: 40px 0;
 }
 
+/* Estilo para el logo */
+.logo-container {
+    position: absolute; /* Hace que el logo se posicione respecto al contenedor (header) */
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+}
+
+.logo {
+    width: 100px; /* Define el tamaño del logo (ajústalo según el tamaño de tu imagen) */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+
 .text-container {
     max-width: 500px;
 }
 
 h1 {
     font-size: 3em;
-    color: #5c2e91;
+    color: #050505;
     margin-bottom: 20px;
 }
 
