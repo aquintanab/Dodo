@@ -7,7 +7,7 @@ body {
   background-color: #ffffff;
 }
 
-/* Header */
+/* Header - CÓDIGO ORIGINAL RESTAURADO */
 header {
   background-color: #ffffff;
   padding: 15px 20px;
@@ -17,10 +17,11 @@ header {
   align-items: center;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 70px; /* Asegura altura mínima */
 }
 
 .logo-container {
-  /* No se necesita ninguna propiedad aquí, el logo se posiciona solo */
+    z-index: 100; /* Para que el logo esté por encima del menú móvil */
 }
 
 .logo {
@@ -28,14 +29,19 @@ header {
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
-  width: 350px; /* Tamaño del logo */
+  width: 350px;
   height: auto;
 }
 
+.nav-container {
+    display: flex; /* Nuevo contenedor para alinear nav y auth-buttons */
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
 nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Ya no necesita position absolute, se centra por el flex del padre */
 }
 
 nav ul {
@@ -65,8 +71,11 @@ nav ul li a:hover {
   display: flex;
   gap: 10px;
   align-items: center;
+  position: absolute; /* Mantenemos su posición original a la derecha */
+  right: 20px;
 }
 
+/* Botones y resto de tus estilos ORIGINALES */
 .login-btn,
 .signup-btn {
   color: black;
@@ -77,219 +86,109 @@ nav ul li a:hover {
   border-radius: 12px;
   transition: all 0.3s ease;
 }
+.login-btn:hover { color: #5c2e91; }
+.signup-btn { background-color: rgba(160, 104, 212, 1); color: white; }
+.signup-btn:hover { background-color: #3b1963; }
+main { padding: 40px 20px; }
+.hero { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; gap: 40px; }
+.text-container { max-width: 600px; margin-left: 80px; }
+.image-container { max-width: 400px; display: flex; justify-content: center; align-items: center; }
+.image-container img { width: 900px; max-width: 100%; height: auto; margin-left: -200px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); display: block; }
+h1 { font-size: 4.5em; color: #050505; margin-bottom: 20px; font-weight: bold; white-space: nowrap; line-height: 1.1; margin-left: 90px; }
+ul { list-style-type: none; padding: 0; }
+ul li { margin-bottom: 10px; font-size: 25px; font-weight: 200; margin-left: 110px; }
+.btn { background-color: rgba(160, 104, 212, 1); color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: -90px; margin-left: 110px; font-weight: 500; transition: all 0.3s ease; display: inline-block; }
+.btn:hover { background-color: #4a1f7b; }
+.secondary { background-color: rgba(240, 237, 241, 1); color: #000000; font-weight: 350; }
+.secondary:hover { background-color: #ccc; }
+.features { display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 0; background-color: #ffffff; overflow: hidden; }
+.features-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #8A2BE2; clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); z-index: 0; }
+.features-content { display: flex; justify-content: center; gap: 50px; position: relative; z-index: 1; padding-top: 150px; padding-bottom: 50px; }
+.feature { font-size: 14px; font-weight: 350; text-align: center; padding: 30px; max-width: 300px; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 20px; position: relative; top: 0; z-index: 1; }
+.feature h2 { color: #000000; font-size: 20px; }
+.feature p { font-size: 1.1em; color: #333; }
+.feature-icon { display: flex; justify-content: center; align-items: center; margin-top: 20px; z-index: 1; }
+.feature-icon img { width: 60px; height: auto; }
+footer { background-color: #5c2e91; color: white; text-align: center; padding: 10px; width: 100%; }
 
-.login-btn:hover {
-  color: #5c2e91;
+/* =============== SECCIÓN DE CÓDIGO NUEVO Y SEGURO PARA MÓVIL =============== */
+.hamburger-menu {
+  display: none; /* Oculto por defecto en escritorio */
+  z-index: 100;
 }
 
-.signup-btn {
-  background-color: rgba(160, 104, 212, 1);
-  color: white;
-}
+@media (max-width: 960px) { /* Cambiamos el punto de quiebre a uno más realista */
 
-.signup-btn:hover {
-  background-color: #3b1963;
-}
+  /* PASO 1: Ocultar la navegación de escritorio y mostrar el botón hamburguesa */
+  .nav-container {
+    display: none; /* Ocultamos el contenedor entero del menú de escritorio */
+  }
 
-main {
-  padding: 40px 20px;
-}
-
-/* Hero Section */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  gap: 40px;
-}
-
-.text-container {
-  max-width: 600px;
-  margin-left: 80px;
-}
-
-.image-container {
-  max-width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-container img {
-  width: 900px;
-  max-width: 100%;
-  height: auto;
-  margin-left: -200px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  display: block;
-}
-
-h1 {
-  font-size: 4.5em;
-  color: #050505;
-  margin-bottom: 20px;
-  font-weight: bold;
-  white-space: nowrap;
-  line-height: 1.1;
-  margin-left: 90px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-  font-size: 25px;
-  font-weight: 200;
-  margin-left: 110px;
-}
-
-.btn {
-  background-color: rgba(160, 104, 212, 1);
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-right: -90px;
-  margin-left: 110px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn:hover {
-  background-color: #4a1f7b;
-}
-
-.secondary {
-  background-color: rgba(240, 237, 241, 1);
-  color: #000000;
-  font-weight: 350;
-}
-
-.secondary:hover {
-  background-color: #ccc;
-}
-
-/* ---------------------------------------------------- */
-/* Estilos para la sección de Features (Landing Page) */
-/* ---------------------------------------------------- */
-.features {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 0;
-  background-color: #ffffff;
-  overflow: hidden;
-}
-
-.features-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #8A2BE2;
-  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-  z-index: 0;
-}
-
-.features-content {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  position: relative;
-  z-index: 1;
-  padding-top: 150px;
-  padding-bottom: 50px;
-}
-
-.feature {
-  font-size: 14px;
-  font-weight: 350;
-  text-align: center;
-  padding: 30px;
-  max-width: 300px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  position: relative;
-  top: 0;
-  z-index: 1;
-}
-
-.feature h2 {
-  color: #000000;
-  font-size: 20px;
-}
-
-.feature p {
-  font-size: 1.1em;
-  color: #333;
-}
-
-/* Estilos para los íconos (corregido) */
-.feature-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  z-index: 1;
-}
-
-.feature-icon img {
-  width: 60px;
-  height: auto;
-}
-
-/* Footer */
-footer {
-  background-color: #5c2e91;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  width: 100%;
-}
-
-/* ---------------------------------------------------- */
-/* Media Queries para Responsive */
-/* ---------------------------------------------------- */
-@media (max-width: 768px) {
-  .hero {
+  .hamburger-menu {
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: space-around;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
-  .text-container {
-    margin-left: 0;
-    margin-bottom: 30px;
+  
+  .hamburger-menu .line {
+    width: 2.2rem;
+    height: 0.25rem;
+    background: #333;
+    border-radius: 10px;
   }
-  h1 {
-    font-size: 3em;
-    white-space: normal;
-  }
-  .btn {
-    margin-left: 0;
-  }
-  .features-content {
-    flex-direction: column;
-  }
-  .main-nav {
-    position: static;
-    transform: none;
-  }
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
+  
+  /* Reducimos el logo en móvil para que quepa */
   .logo {
+      width: 200px;
+  }
+
+  /* PASO 2: Dar estilo al menú cuando se ABRE en móvil */
+  .nav-container.active {
+      display: flex; /* Hacemos visible el contenedor */
+      position: fixed;
+      z-index: 50; /* Por debajo del logo y la hamburguesa */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh; /* Pantalla completa */
+      background-color: white;
+
+      flex-direction: column; /* Apilamos los elementos verticalmente */
+      justify-content: center;
+      align-items: center;
+  }
+
+  .nav-container.active nav {
     position: static;
     transform: none;
-    margin-bottom: 10px;
   }
+
+  .nav-container.active nav ul {
+      flex-direction: column; /* Apilamos los enlaces */
+      gap: 30px; /* Espacio entre ellos */
+      text-align: center;
+  }
+
+  .nav-container.active .auth-buttons {
+      position: static;
+      transform: none;
+      flex-direction: column; /* Apilamos los botones */
+      gap: 20px;
+      margin-top: 40px; /* Espacio entre los links y los botones */
+  }
+
+  /* Resto de estilos que ya tenías para el contenido principal */
+  .hero { flex-direction: column; text-align: center; }
+  .text-container { margin-left: 0; margin-bottom: 30px; }
+  .image-container, .image-container img { margin-left: 0; }
+  h1 { font-size: 3em; white-space: normal; margin-left: 0; }
+  ul li { margin-left: 0; }
+  .btn { display: block; max-width: 200px; margin: 10px auto; }
+  .features-content { flex-direction: column; }
 }

@@ -1,75 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dodo Platform</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo-container">
-            <img src="logododo.png" alt="Logo" class="logo">
-        </div>
+      <div class="logo-container">
+        <a href="Landing_page.html"
+          ><img src="logododo.png" alt="Logo" class="logo"
+        /></a>
+      </div>
+
+      <!-- Botón de hamburguesa que solo se verá en móvil -->
+      <button class="hamburger-menu" aria-label="Abrir menú">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+      <!-- Contenedor del menú para móvil (que también contiene la navegación de escritorio) -->
+      <div class="nav-container">
         <nav>
-            <ul>
-                <li><a href="#">¿Cómo funciona?</a></li>
-                <li><a href="#">¿Quiénes somos?</a></li>
-                <li><a href="#">Nuestro propósito</a></li>
-            </ul>
+          <ul>
+            <li><a href="#">¿Cómo funciona?</a></li>
+            <li><a href="#">¿Quiénes somos?</a></li>
+            <li><a href="#">Nuestro propósito</a></li>
+          </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="#" class="login-btn">Log in</a>
-            <a href="SignUp_page.html" class="signup-btn">Sign up</a>
+          <a href="#" class="login-btn">Log in</a>
+          <a href="SignUp_page.html" class="signup-btn">Sign up</a>
         </div>
+      </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="text-container">
-                <h1>Print on demand</h1>
-                <ul>
-                    <li>Envío rápido</li>
-                    <li>Buena calidad</li>
-                    <li>Variedad de opciones</li>
-                </ul>
-                <a href="#" class="btn">Comienza ahora</a>
-                <a href="#" class="btn secondary">Tutorial</a>
-            </div>
-            <div class="image-container">
-                <img src="mujer.png" alt="App Image">
-            </div>
-        </section>
+      <section class="hero">
+        <div class="text-container">
+          <h1>Print on demand</h1>
+          <ul>
+            <li>Envío rápido</li>
+            <li>Buena calidad</li>
+            <li>Variedad de opciones</li>
+          </ul>
+          <a href="#" class="btn">Comienza ahora</a>
+          <a href="#" class="btn secondary">Tutorial</a>
+        </div>
+        <div class="image-container">
+          <img src="mujer.png" alt="App Image" />
+        </div>
+      </section>
 
-        <section class="features">
-            <div class="features-bg"></div>
-            <div class="features-content">
-                <div class="feature">
-                    <h2>PRECIOS ECONÓMICOS</h2>
-                    <p>Contamos con precios muy económicos que se acomodan a tu presupuesto y lo mejor, desde la comodidad de tu casa.</p>
-                    <div class="feature-icon">
-                        <img src="dinero.png" alt="Icono dinero">
-                    </div>
-                </div>
-                <div class="feature">
-                    <h2>ENVÍOS A TODA COLOMBIA</h2>
-                    <p>Nuestros envíos son rápido y seguros. Tardan entre 3 a 5 días hábiles dependiendo de donde te encuentres.</p>
-                    <div class="feature-icon">
-                        <img src="carro.png" alt="Icono envío">
-                    </div>
-                </div>
-                <div class="feature">
-                    <h2>EFICIENCIA Y COMODIDAD</h2>
-                    <p>Dodo une todos los beneficios en un solo lugar, tus prendas llegan en tiempo récord y la comodidad a la hora de diseñar hace la diferencia.</p>
-                    <div class="feature-icon">
-                        <img src="movil.png" alt="Icono eficiencia">
-                    </div>
-                </div>
+      <section class="features">
+        <div class="features-bg"></div>
+        <div class="features-content">
+          <div class="feature">
+            <h2>PRECIOS ECONÓMICOS</h2>
+            <p>
+              Contamos con precios muy económicos que se acomodan a tu
+              presupuesto y lo mejor, desde la comodidad de tu casa.
+            </p>
+            <div class="feature-icon">
+              <img src="dinero.png" alt="Icono dinero" />
             </div>
-        </section>
+          </div>
+          <div class="feature">
+            <h2>ENVÍOS A TODA COLOMBIA</h2>
+            <p>
+              Nuestros envíos son rápido y seguros. Tardan entre 3 a 5 días
+              hábiles dependiendo de donde te encuentres.
+            </p>
+            <div class="feature-icon">
+              <img src="carro.png" alt="Icono envío" />
+            </div>
+          </div>
+          <div class="feature">
+            <h2>EFICIENCIA Y COMODIDAD</h2>
+            <p>
+              Dodo une todos los beneficios en un solo lugar, tus prendas llegan
+              en tiempo récord y la comodidad a la hora de diseñar hace la
+              diferencia.
+            </p>
+            <div class="feature-icon">
+              <img src="movil.png" alt="Icono eficiencia" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2025 Dodo Platform. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Dodo Platform. Todos los derechos reservados.</p>
     </footer>
-</body>
+
+    <!-- Script de JavaScript para darle vida al botón -->
+    <script src="main.js"></script>
+  </body>
 </html>
