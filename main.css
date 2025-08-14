@@ -7,7 +7,7 @@ body {
   background-color: #ffffff;
 }
 
-
+/* Header */
 header {
   background-color: #ffffff;
   padding: 15px 20px;
@@ -17,29 +17,28 @@ header {
   align-items: center;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
 
-/* Ajustamos el logo para que no use position absolute */
 .logo-container {
-  display: flex;
-  align-items: center;
+  /* No se necesita ninguna propiedad aquí, el logo se posiciona solo */
 }
 
 .logo {
-  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 350px; /* Tamaño del logo */
   height: auto;
 }
 
-/* Centramos la navegación principal */
-.main-nav {
+nav {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
 nav ul {
-  
   list-style-type: none;
   display: flex;
   justify-content: center;
@@ -62,7 +61,6 @@ nav ul li a:hover {
   color: #5c2e91;
 }
 
-/* Botones de autenticación */
 .auth-buttons {
   display: flex;
   gap: 10px;
@@ -106,12 +104,10 @@ main {
   gap: 40px;
 }
 
-/* Ajustando contenedor de texto para mejor posicionamiento */
 .text-container {
   max-width: 600px;
   margin-left: 80px;
 }
-
 
 .image-container {
   max-width: 400px;
@@ -120,13 +116,12 @@ main {
   align-items: center;
 }
 
-/* Imagen de la mujer más grande y bien ubicada */
 .image-container img {
   width: 900px;
   max-width: 100%;
   height: auto;
   margin-left: -200px;
-   border-radius: 12px;
+  border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   display: block;
 }
@@ -138,7 +133,7 @@ h1 {
   font-weight: bold;
   white-space: nowrap;
   line-height: 1.1;
-  margin-left: 90px
+  margin-left: 90px;
 }
 
 ul {
@@ -150,13 +145,13 @@ ul li {
   margin-bottom: 10px;
   font-size: 25px;
   font-weight: 200;
-  margin-left: 110px
+  margin-left: 110px;
 }
 
 .btn {
   background-color: rgba(160, 104, 212, 1);
   color: white;
- padding: 12px 24px;
+  padding: 12px 24px;
   text-decoration: none;
   border-radius: 5px;
   margin-right: -90px;
@@ -165,7 +160,6 @@ ul li {
   transition: all 0.3s ease;
   display: inline-block;
 }
-
 
 .btn:hover {
   background-color: #4a1f7b;
@@ -181,34 +175,53 @@ ul li {
   background-color: #ccc;
 }
 
-/* Features Section */ /*parte inferior de contenidos*/
+/* ---------------------------------------------------- */
+/* Estilos para la sección de Features (Landing Page) */
+/* ---------------------------------------------------- */
 .features {
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.features-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #8A2BE2;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+
+.features-content {
   display: flex;
   justify-content: center;
-  margin: 0;
-  gap: 50px; 
-
-  background-image: url("grafico.png");
-  background-size: 130%;
-  background-position: center -270px;
-  background-repeat: no-repeat;
-  padding: 60px 20px;
-  margin-top: 20px;
-  min-height: 200px;
-  
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+  padding-top: 150px;
+  padding-bottom: 50px;
 }
 
 .feature {
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: 350;
   text-align: center;
-  padding: 10px;
+  padding: 30px;
   max-width: 300px;
-  background-color: rgba(243, 231, 251, 1);
+  background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  
+  position: relative;
+  top: 0;
+  z-index: 1;
 }
 
 .feature h2 {
@@ -221,57 +234,62 @@ ul li {
   color: #333;
 }
 
+/* Estilos para los íconos (corregido) */
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  z-index: 1;
+}
+
+.feature-icon img {
+  width: 60px;
+  height: auto;
+}
+
 /* Footer */
 footer {
   background-color: #5c2e91;
   color: white;
   text-align: center;
   padding: 10px;
-  position: fixed;
   width: 100%;
-  bottom: 0;
 }
 
+/* ---------------------------------------------------- */
+/* Media Queries para Responsive */
+/* ---------------------------------------------------- */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
   }
-
   .text-container {
     margin-left: 0;
     margin-bottom: 30px;
   }
-
-  /* Ajustes responsive para el título */
   h1 {
     font-size: 3em;
     white-space: normal;
   }
-
-  /* Botones centrados en móvil */
   .btn {
     margin-left: 0;
   }
-
-  .features {
+  .features-content {
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
   }
-
   .main-nav {
     position: static;
     transform: none;
   }
-
   header {
     flex-direction: column;
     gap: 15px;
   }
-
-  /* Logo responsive */
   .logo {
-    width: 120px;
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
   }
 }
