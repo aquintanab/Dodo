@@ -117,9 +117,9 @@ footer { background-color: #5c2e91; color: white; text-align: center; padding: 1
   z-index: 100;
 }
 
-@media (max-width: 960px) { /* Cambiamos el punto de quiebre a uno más realista */
+@media (max-width: 960px) { 
 
-  /* PASO 1: Ocultar la navegación de escritorio y mostrar el botón hamburguesa */
+  /* Ocultamos la navegación de escritorio y mostrar el botón hamburguesa */
   .nav-container {
     display: none; /* Ocultamos el contenedor entero del menú de escritorio */
   }
@@ -143,12 +143,12 @@ footer { background-color: #5c2e91; color: white; text-align: center; padding: 1
     border-radius: 10px;
   }
   
-  /* Reducimos el logo en móvil para que quepa */
+  /* reducimos el logo en móvil */
   .logo {
       width: 200px;
   }
 
-  /* PASO 2: Dar estilo al menú cuando se ABRE en móvil */
+  /* estilo al menú cuando se ABRE en móvil */
   .nav-container.active {
       display: flex; /* Hacemos visible el contenedor */
       position: fixed;
