@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Comprobamos que ambos elementos existen antes de añadir el evento
     if (hamburger && navContainer) {
         hamburger.addEventListener('click', function () {
-            // Esta línea añade o quita la clase 'active' al contenedor del menú
+            // Esto permite que se vea o no el menu hamburguesa
             navContainer.classList.toggle('active');
         });
     }
