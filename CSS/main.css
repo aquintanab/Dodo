@@ -13,7 +13,7 @@ header {
   padding: 15px 20px;
   color: rgb(0, 0, 0);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Mueve los elementos a los extremos */
   align-items: center;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,27 +21,20 @@ header {
 }
 
 .logo-container {
-    z-index: 100; /* Para que el logo esté por encima del menú móvil */
+    z-index: 100;
 }
 
 .logo {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  width: 350px;
+  width: 150px;
   height: auto;
 }
 
 .nav-container {
-    display: flex; 
+    display: flex;
     align-items: center;
     width: 100%;
     justify-content: center;
-}
-
-nav {
-  
+    gap: 40px;
 }
 
 nav ul {
@@ -61,6 +54,7 @@ nav ul li a {
   text-decoration: none;
   font-weight: 320;
   font-size: 1.0em;
+  padding: 8px 16px;
 }
 
 nav ul li a:hover {
@@ -71,8 +65,6 @@ nav ul li a:hover {
   display: flex;
   gap: 10px;
   align-items: center;
-  position: absolute; /* Mantenemos su posición original a la derecha */
-  right: 20px;
 }
 
 /* Estilos de los botones de sign up y log in */
@@ -81,7 +73,7 @@ nav ul li a:hover {
   color: black;
   text-decoration: none;
   font-weight: 320;
-  font-size: 1.2em;
+  font-size: 1.0em;
   padding: 8px 16px;
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -113,77 +105,19 @@ footer { background-color: #5c2e91; color: white; text-align: center; padding: 1
 
 /* =============== Estilos del responsive =============== */
 .hamburger-menu {
-  display: none; /* Oculto por defecto en escritorio */
+  display: none;
   z-index: 100;
 }
 
-@media (max-width: 960px) { 
-
-  /* Ocultamos la navegación de escritorio y mostrar el botón hamburguesa */
-  .nav-container {
-    display: none; /* Ocultamos el contenedor entero del menú de escritorio */
-  }
-
-  .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2.2rem;
-    height: 2.2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .hamburger-menu .line {
-    width: 2.2rem;
-    height: 0.25rem;
-    background: #333;
-    border-radius: 10px;
-  }
-  
-  /* reducimos el logo en móvil */
-  .logo {
-      width: 200px;
-  }
-
-  /* estilo al menú cuando se ABRE en móvil */
-  .nav-container.active {
-      display: flex; /* Hacemos visible el contenedor */
-      position: fixed;
-      z-index: 50; /* Por debajo del logo y la hamburguesa */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh; /* Pantalla completa */
-      background-color: white;
-
-      flex-direction: column; /* colocamos los elementos verticalmente */
-      justify-content: center;
-      align-items: center;
-  }
-
-  .nav-container.active nav {
-    position: static;
-    transform: none;
-  }
-
-  .nav-container.active nav ul {
-      flex-direction: column; /* colocamos los enlaces del menu hamburguesa */
-      gap: 30px; /* Espacio entre ellos */
-      text-align: center;
-  }
-
-  .nav-container.active .auth-buttons {
-      position: static;
-      transform: none;
-      flex-direction: column; /* colocamos los botones verticalmente */
-      gap: 20px;
-      margin-top: 40px; /* Espacio entre los links y los botones */
-  }
-
-  /* estilos de la landing */
+@media (max-width: 960px) {
+  .nav-container { display: none; }
+  .hamburger-menu { display: flex; flex-direction: column; justify-content: space-around; width: 2.2rem; height: 2.2rem; background: transparent; border: none; cursor: pointer; padding: 0; }
+  .hamburger-menu .line { width: 2.2rem; height: 0.25rem; background: #333; border-radius: 10px; }
+  .logo { width: 200px; }
+  .nav-container.active { display: flex; position: fixed; z-index: 50; top: 0; left: 0; width: 100%; height: 100vh; background-color: white; flex-direction: column; justify-content: center; align-items: center; }
+  .nav-container.active nav { position: static; transform: none; }
+  .nav-container.active nav ul { flex-direction: column; gap: 30px; text-align: center; }
+  .nav-container.active .auth-buttons { position: static; transform: none; flex-direction: column; gap: 20px; margin-top: 40px; }
   .hero { flex-direction: column; text-align: center; }
   .text-container { margin-left: 0; margin-bottom: 30px; }
   .image-container, .image-container img { margin-left: 0; }

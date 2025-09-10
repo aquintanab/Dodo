@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodo Platform - Guía de Pasos</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/print_on.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="Landing_page.html">
+                <img src="../Images/logododo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">¿Cómo funciona?</a></li>
+                <li><a href="#">¿Quiénes somos?</a></li>
+                <li><a href="#">Nuestro propósito</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="login-btn">Log in</a>
+            <a href="SignUp_page.html" class="signup-btn">Sign up</a>
+        </div>
+    </header>
+
+    <div class="main-guia-container">
+        <div class="guia-background"></div>
+        <div class="guia-content">
+            <div class="guia-pasos-panel">
+                <div class="guia-pasos-header">
+                    <h2>GUÍA DE PASOS</h2>
+                    <div class="guia-navigation">
+                        <button class="nav-btn prev-btn" onclick="previousSlide()">‹</button>
+                        <span id="slide-indicator">1 / 3</span>
+                        <button class="nav-btn next-btn" onclick="nextSlide()">›</button>
+                    </div>
+                </div>
+                <div class="guia-pasos-content">
+                    <div class="guia-paso-slide active">
+                        ¡Ayúdate de esta guía de pasos para poder hacer las mejores creaciones!
+                    </div>
+                    <div class="guia-paso-slide">
+                        ¿Ya sabes para quién es tu diseño? ¿Para hombre o para mujer? Ahora es turno de elegir la mejor silueta.
+                    </div>
+                    <div class="guia-paso-slide">
+                        Personaliza tu diseño agregando texto, imágenes y elementos que reflejen tu estilo único.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tshirt-designer">
+                <div class="tshirt-view-tabs">
+                    <button class="tab-btn active" onclick="switchTab(this, 'front')">Front</button>
+                    <button class="tab-btn" onclick="switchTab(this, 'back')">Back</button>
+                </div>
+                <div class="tshirt-container">
+                    <img src="../Images/tshirt-front.png" alt="Camiseta" class="tshirt-image">
+                </div>
+            </div>
+
+            <div class="guia-sidebar">
+                <div class="sidebar-item" onclick="showTooltip('Consulta las medidas disponibles')">
+                    <img src="../Images/size-guide.png" alt="Guía tallas">
+                    <p>Guía tallas</p>
+                </div>
+                <div class="sidebar-item" onclick="showTooltip('Vista previa del diseño')">
+                    <img src="../Images/preview.png" alt="Preview">
+                    <p>Preview</p>
+                </div>
+                <div class="sidebar-item" onclick="showTooltip('Ampliar vista')">
+                    <img src="../Images/zoom.png" alt="Zoom">
+                    <p>Zoom</p>
+                </div>
+                <div class="sidebar-item" onclick="showTooltip('Agregar texto al diseño')">
+                    <img src="../Images/add-text.png" alt="Agregar texto">
+                    <p>Agregar texto</p>
+                </div>
+                <div class="sidebar-item" onclick="showTooltip('Subir imagen personalizada')">
+                    <img src="../Images/add-image.png" alt="Agregar imagen">
+                    <p>Agregar imagen</p>
+                </div>
+                <div class="sidebar-item" onclick="showTooltip('Guardar diseño')">
+                    <img src="../Images/save.png" alt="Guardar">
+                    <p>Guardar</p>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart()">
+                    <img src="../Images/add-to-cart.png" alt="Carrito">
+                    <p>Agregar al carrito</p>
+                </button>
+            </div>
+
+            <div class="chat-widget">
+                <div class="chat-header">¡Hola!</div>
+                <div class="chat-body">
+                    <p>¡Hola! Hacemos que te enamores de tu ropa... Si tienes algún problema con el servicio al cliente, o una duda que no esté dentro de nuestra política, ¿en qué podemos ayudarte?</p>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" placeholder="Ingresa tu mensaje" onkeypress="handleEnter(event)">
+                    <button class="send-btn" onclick="sendMessage()">
+                        <img src="../Images/send.png" alt="Enviar">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/print_on.js"></script>
+</body>
+</html>
