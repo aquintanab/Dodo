@@ -1,4 +1,6 @@
-/* Estilos para la página de la Guía - VERSIÓN CORREGIDA */
+/* ================================
+   PRINT ON DEMAND – LAYOUT CORREGIDO (manteniendo estilo original)
+   ================================ */
 
 .main-guia-container {
     position: relative;
@@ -26,9 +28,12 @@
     height: calc(100vh - 80px);
     max-width: 1400px;
     margin: 0 auto;
+    align-items: start;        /* 👈 todo alineado arriba */
+    padding-right: 320px;      /* 👈 deja espacio al chat */
+    box-sizing: border-box;
 }
 
-/* Guía de pasos panel - más compacto */
+/* Guía de pasos panel */
 .guia-pasos-panel {
     background-color: white;
     border-radius: 15px;
@@ -50,17 +55,13 @@
     margin-bottom: 10px;
 }
 
+/* Navegación flechas */
 .guia-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;   /* 👈 flechas e indicador en fila */
     align-items: center;
+    gap: 10px;
     margin-bottom: 10px;
-}
-
-#slide-indicator {
-    font-size: 12px;
-    color: #666;
-    font-weight: 500;
 }
 
 .nav-btn {
@@ -76,35 +77,11 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
+    flex-shrink: 0;
 }
 
 .nav-btn:hover {
-    background-color: #7A1BC2;
-}
-
-.guia-pasos-content {
-    position: relative;
-    min-height: 100px;
-}
-
-.guia-paso-slide {
-    display: none;
-    background-color: #f8f6ff;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #555;
-}
-
-.guia-paso-slide.active {
-    display: block;
-    animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    background-color: #6F1BB0;   /* 👈 tono más oscuro para hover */
 }
 
 /* T-shirt designer */
@@ -112,7 +89,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* 👈 pegado arriba */
+    align-self: start;
 }
 
 .tshirt-view-tabs {
@@ -137,11 +115,17 @@
     color: white;
 }
 
+.tab-btn:hover {
+    background-color: #6F1BB0;   /* 👈 tono más oscuro para hover */
+    color: white;
+}
+
 .tshirt-container {
     background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 0 !important;  /* 👈 sin espacio extra arriba */
 }
 
 .tshirt-image {
@@ -150,7 +134,7 @@
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
-/* Sidebar - más compacto y sin superposición */
+/* Sidebar */
 .guia-sidebar {
     background-color: white;
     border-radius: 15px;
@@ -163,71 +147,15 @@
     height: fit-content;
     max-height: calc(100vh - 200px);
     overflow-y: auto;
+    align-self: start;          /* 👈 arriba */
 }
 
-.sidebar-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-.sidebar-item:hover {
-    background-color: #f8f6ff;
-}
-
-.sidebar-item img {
-    width: 24px;
-    height: 24px;
-}
-
-.sidebar-item p {
-    font-size: 10px;
-    color: #666;
-    font-weight: 500;
-    margin: 0;
-}
-
-.add-to-cart-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    background: #8A2BE2;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 12px 8px;
-    color: white;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #7A1BC2;
-}
-
-.add-to-cart-btn img {
-    width: 24px;
-    height: 24px;
-}
-
-.add-to-cart-btn p {
-    font-size: 10px;
-    margin: 0;
-}
-
-/* Chat widget - posición fija pero sin conflicto */
+/* Chat widget */
 .chat-widget {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 280px;
+    width: 300px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -291,7 +219,7 @@
 }
 
 .send-btn:hover {
-    background-color: #7A1BC2;
+    background-color: #6F1BB0;  /* 👈 tono más oscuro */
 }
 
 .send-btn img {
@@ -299,15 +227,7 @@
     height: 16px;
 }
 
-/* Responsive design */
-@media (max-width: 1400px) {
-    .guia-content {
-        grid-template-columns: 250px 1fr 100px 280px;
-        gap: 15px;
-        padding: 15px;
-    }
-}
-
+/* Responsive */
 @media (max-width: 1200px) {
     .guia-content {
         grid-template-columns: 1fr;
@@ -315,16 +235,8 @@
         gap: 20px;
         height: auto;
         min-height: calc(100vh - 80px);
+        padding-right: 0;   /* 👈 ya no reservamos espacio */
     }
-    
-    .guia-pasos-panel {
-        order: 1;
-    }
-    
-    .tshirt-designer {
-        order: 2;
-    }
-    
     .guia-sidebar {
         order: 3;
         flex-direction: row;
@@ -333,9 +245,9 @@
         padding: 10px;
         max-height: none;
     }
-    
     .chat-widget {
         order: 4;
         max-height: 300px;
+        width: 280px;
     }
 }
