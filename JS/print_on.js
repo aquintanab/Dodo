@@ -127,6 +127,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // iniciar en 0
   updateCart();
+
+
+
+
+  //LÓGICA PARA ABRIR MODAL
+  const modal = document.querySelector("#sizeModal");
+  const modalBody = document.querySelector("#modalBody");
+  const closeModal = document.querySelector("#closeModal");
+
+  // Aquí vamos a poner el contenido que se debe abrir con cada función
+  const modalContents = {
+    tallas: `
+      <h3>Guía de Tallas</h3>
+      <div class="guia-tallas">
+        <div class="talla-hombre">
+          <h4>Hombres</h4>
+          <table>
+            <tr><th>Tallas</th><th>Alto</th><th>Pecho</th></tr>
+            <tr><td>S</td><td>62</td><td>43</td></tr>
+            <tr><td>M</td><td>65</td><td>46</td></tr>
+            <tr><td>L</td><td>68</td><td>49</td></tr>
+          </table>
+        </div>
+        <div class="talla-mujer">
+          <h4>Mujeres</h4>
+          <table>
+            <tr><th>Tallas</th><th>Alto</th><th>Pecho</th></tr>
+            <tr><td>S</td><td>62</td><td>43</td></tr>
+            <tr><td>M</td><td>65</td><td>46</td></tr>
+            <tr><td>L</td><td>68</td><td>49</td></tr>
+          </table>
+        </div>
+      </div>
+    `,
+    preview: `<h3>Vista previa</h3><p>Aquí se va mostrar cómo se ve el diseño completo.</p>`,
+    zoom: `<h3>Zoom</h3><p>Añadir luego función para zoom.</p>`,
+    texto: `<h3>Agregar texto</h3><input type="text" placeholder="Escribe tu texto">`,
+    imagen: `<div class="add-image">
+      <h3>Agregar imagen</h3>
+      <div class="shirt-stamp">
+        <img src="../Images/shirt-stamp.png" />
+      </div>
+    </div>`,
+    guardar: `<h3>Guardar diseño</h3><p>Tu diseño se ha guardado exitosamente.</p>`
+  };
+
+  document.querySelectorAll(".sidebar-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const modalType = item.dataset.modal;
+      modalBody.innerHTML = modalContents[modalType] || "<p>Contenido no disponible</p>";
+      modal.classList.add("show");
+    });
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
 });
 
 

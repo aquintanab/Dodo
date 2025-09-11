@@ -82,34 +82,43 @@
                 </div>
             </div>
 
+            <div class="modal hidden" id="sizeModal">
+                <div class="modal-content">
+                    <span class="modal-close" id="closeModal">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </span>
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+
             <div class="guia-sidebar">
                 <div class="guia-sidebar-options">
-                    <div class="sidebar-item">
+                    <div class="sidebar-item" data-modal="tallas">
                         <!--<img src="../Images/size-guide.png" alt="Guía tallas">-->
                         <p>Guía tallas</p>
                         <i class="fa-solid fa-children"></i>
                     </div>
-                    <div class="sidebar-item">
+                    <div class="sidebar-item" data-modal="preview">
                         <!--<img src="../Images/preview.png" alt="Preview">-->
                         <p>Preview</p>
                         <i class="fa-solid fa-eye"></i>
                     </div>
-                    <div class="sidebar-item">
+                    <div class="sidebar-item" data-modal="zoom">
                         <!--<img src="../Images/zoom.png" alt="Zoom">-->
                         <p>Zoom</p>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div class="sidebar-item">
+                    <div class="sidebar-item" data-modal="texto">
                         <!--<img src="../Images/add-text.png" alt="Agregar texto">-->
                         <p>Agregar texto</p>
                         <i class="fa-solid fa-text-width"></i>
                     </div>
-                    <div class="sidebar-item">
+                    <div class="sidebar-item" data-modal="imagen">
                         <!--<img src="../Images/add-image.png" alt="Agregar imagen">-->
                         <p>Agregar imagen</p>
                         <i class="fa-solid fa-image"></i>
                     </div>
-                    <div class="sidebar-item">
+                    <div class="sidebar-item" data-modal="guardar">
                         <!--<img src="../Images/save.png" alt="Guardar">-->
                         <p>Guardar</p>
                         <i class="fa-solid fa-floppy-disk"></i>
