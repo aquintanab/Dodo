@@ -6,6 +6,7 @@
     <title>Dodo Platform - Sign Up</title>
     <link rel="stylesheet" href="./../CSS/main.css">
     <link rel="stylesheet" href="./../CSS/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -24,6 +25,25 @@
         <div class="auth-buttons">
             <a href="#" class="login-btn">Log in</a>
             <a href="SignUp_page.html" class="signup-btn">Sign up</a>
+            <a href="#" class="bag-shopping" id="cartButton">
+                <span class="bubble-count">0</span>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+
+            <!-- Drawer del carrito -->
+            <div class="cart-drawer hidden" id="cartDrawer">
+                <div class="cart-drawer-header">
+                    <h3>Tu carrito</h3>
+                    <button id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="cart-drawer-body" id="cartItems">
+                    <p class="empty-cart">Tu carrito está vacío.</p>
+                </div>
+                <div class="cart-drawer-footer">
+                    <p id="cartTotal">Total: $0</p>
+                    <button class="checkout-btn">Finalizar compra</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -46,5 +66,7 @@
     <footer>
       <p>&copy; 2025 Dodo Platform. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="../JS/print_on.js"></script>
 </body>
 </html>

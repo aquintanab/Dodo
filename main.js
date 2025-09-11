@@ -70,10 +70,10 @@ function switchTab(button, view) {
     // Cambiar imagen de la camiseta según la vista
     const tshirtImage = document.querySelector('.tshirt-image');
     if (view === 'front') {
-        tshirtImage.src = '../Images/tshirt-front.png';
+        tshirtImage.src = '../Images/shirt-front.png';
         tshirtImage.alt = 'Camiseta - Vista frontal';
     } else if (view === 'back') {
-        tshirtImage.src = '../Images/tshirt-back.png';
+        tshirtImage.src = '../Images/shirt-back.png';
         tshirtImage.alt = 'Camiseta - Vista trasera';
     }
     
